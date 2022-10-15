@@ -1,8 +1,6 @@
 package study.seo.a3multipleappscreens_miwokapp.data
 
-import android.media.MediaPlayer
-
-data class ActivityData(
+data class NumberData(
     val numberData: String,
     val nameData: String,
     val imageData: Int,
