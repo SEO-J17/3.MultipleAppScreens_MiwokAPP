@@ -13,7 +13,7 @@ class ColorActivity : AppCompatActivity() {
         findViewById<ListView>(R.id.infoPage)?.apply {
             adapter = ListAdapter(this@ColorActivity, DataSource().loadColors())
             setBackgroundResource(R.color.category_colors)
-        } ?: ToastErrorMessage()
-            .errorMessage(this@ColorActivity)
+        } ?: LogError()
+            .errorLog()
     }
 }

@@ -13,7 +13,7 @@ class PhrasesActivity : AppCompatActivity() {
         findViewById<ListView>(R.id.infoPage)?.apply {
             adapter = ListAdapter(this@PhrasesActivity, DataSource().loadPharse())
             setBackgroundResource(R.color.category_phrases)
-        } ?: ToastErrorMessage()
-            .errorMessage(this@PhrasesActivity)
+        } ?: LogError()
+            .errorLog()
     }
 }

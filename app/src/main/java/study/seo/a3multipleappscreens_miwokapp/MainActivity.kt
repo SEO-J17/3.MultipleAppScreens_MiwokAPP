@@ -12,23 +12,23 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.numbers)?.setOnClickListener {
             startActivity(Intent(this, NumberActivity::class.java))
-        } ?: ToastErrorMessage()
-            .errorMessage(this@MainActivity)
+        } ?: LogError()
+            .errorLog()
 
         findViewById<TextView>(R.id.family)?.setOnClickListener {
             startActivity(Intent(this, FamilyActivity::class.java))
-        } ?: ToastErrorMessage()
-            .errorMessage(this@MainActivity)
+        } ?: LogError()
+            .errorLog()
 
         findViewById<TextView>(R.id.colors)?.setOnClickListener {
             startActivity(Intent(this, ColorActivity::class.java))
-        } ?: ToastErrorMessage()
-            .errorMessage(this@MainActivity)
+        } ?: LogError()
+            .errorLog()
 
         findViewById<TextView>(R.id.phrases)?.setOnClickListener {
             startActivity(Intent(this, PhrasesActivity::class.java))
-        } ?: ToastErrorMessage()
-            .errorMessage(this@MainActivity)
+        } ?: LogError()
+            .errorLog()
     }
 //
 //    override fun onClick(v: View?) {

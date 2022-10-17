@@ -13,7 +13,7 @@ class NumberActivity : AppCompatActivity() {
         findViewById<ListView>(R.id.infoPage)?.apply {
             adapter = ListAdapter(this@NumberActivity, DataSource().loadNumbers())
             setBackgroundResource(R.color.category_numbers)
-        } ?: ToastErrorMessage()
-            .errorMessage(this@NumberActivity)
+        } ?: LogError()
+            .errorLog()
     }
 }

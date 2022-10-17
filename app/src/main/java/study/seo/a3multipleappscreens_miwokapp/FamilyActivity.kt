@@ -13,7 +13,7 @@ class FamilyActivity : AppCompatActivity() {
         findViewById<ListView>(R.id.infoPage)?.apply {
             adapter = ListAdapter(this@FamilyActivity, DataSource().loadFamily())
             setBackgroundResource(R.color.category_family)
-        } ?: ToastErrorMessage()
-            .errorMessage(this@FamilyActivity)
+        } ?: LogError()
+            .errorLog()
     }
 }

@@ -35,7 +35,6 @@ class ListAdapter(
             view.findViewById<TextView>(R.id.item_title).text = numberData
             view.findViewById<TextView>(R.id.name_title).text = nameData
             view.findViewById<ImageView>(R.id.image).apply {
-                //run을 해도 되지 않을까..? 람다식 결과값 리턴이 필요없어서 안쓰나..?
                 if (imageData == -1) {
                     visibility = View.GONE
                 } else {
