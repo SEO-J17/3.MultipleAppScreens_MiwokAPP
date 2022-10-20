@@ -2,7 +2,7 @@ package study.seo.a3multipleappscreens_miwokapp.data
 
 import study.seo.a3multipleappscreens_miwokapp.R
 
-class DataSource {
+object DataSource {
     fun loadNumbers(): List<NumberData> {
         return listOf(
             NumberData("1", "James1", R.drawable.number_one, R.raw.number_one),

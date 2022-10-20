@@ -4,16 +4,19 @@ import android.os.Bundle
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import study.seo.a3multipleappscreens_miwokapp.data.DataSource
+import study.seo.a3multipleappscreens_miwokapp.databinding.ActivityInfoPageBinding
 
 class NumberActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityInfoPageBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_info_page)
+        binding = ActivityInfoPageBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        findViewById<ListView>(R.id.infoPage)?.apply {
-            adapter = ListAdapter(this@NumberActivity, DataSource().loadNumbers())
+        binding.infoPage.apply {
+            adapter = ListAdapter(DataSource.loadNumbers())
             setBackgroundResource(R.color.category_numbers)
-        } ?: LogError()
-            .errorLog()
+        }
     }
 }

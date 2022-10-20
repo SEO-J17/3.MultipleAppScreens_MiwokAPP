@@ -4,16 +4,19 @@ import android.os.Bundle
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import study.seo.a3multipleappscreens_miwokapp.data.DataSource
+import study.seo.a3multipleappscreens_miwokapp.databinding.ActivityInfoPageBinding
 
 class PhrasesActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityInfoPageBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_info_page)
+        binding = ActivityInfoPageBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        findViewById<ListView>(R.id.infoPage)?.apply {
-            adapter = ListAdapter(this@PhrasesActivity, DataSource().loadPharse())
+        binding.infoPage.apply {
+            adapter = ListAdapter(DataSource.loadPharse())
             setBackgroundResource(R.color.category_phrases)
-        } ?: LogError()
-            .errorLog()
+        }
     }
 }

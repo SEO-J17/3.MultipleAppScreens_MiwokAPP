@@ -3,50 +3,32 @@ package study.seo.a3multipleappscreens_miwokapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import study.seo.a3multipleappscreens_miwokapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        findViewById<TextView>(R.id.numbers)?.setOnClickListener {
+        binding.numbers.setOnClickListener {
             startActivity(Intent(this, NumberActivity::class.java))
-        } ?: LogError()
-            .errorLog()
+        }
 
-        findViewById<TextView>(R.id.family)?.setOnClickListener {
+        binding.family.setOnClickListener {
             startActivity(Intent(this, FamilyActivity::class.java))
-        } ?: LogError()
-            .errorLog()
+        }
 
-        findViewById<TextView>(R.id.colors)?.setOnClickListener {
+        binding.colors.setOnClickListener {
             startActivity(Intent(this, ColorActivity::class.java))
-        } ?: LogError()
-            .errorLog()
+        }
 
-        findViewById<TextView>(R.id.phrases)?.setOnClickListener {
+        binding.phrases.setOnClickListener {
             startActivity(Intent(this, PhrasesActivity::class.java))
-        } ?: LogError()
-            .errorLog()
+        }
     }
-//
-//    override fun onClick(v: View?) {
-//        when (v?.id) {
-//            R.id.numbers -> {
-//                startActivity(Intent(this, NumberActivity::class.java))
-//            }
-//            R.id.family -> {
-//                startActivity(Intent(this, FamilyActivity::class.java))
-//            }
-//            R.id.colors -> {
-//                startActivity(Intent(this, ColorActivity::class.java))
-//            }
-//            R.id.phrases -> {
-//                startActivity(Intent(this, PhrasesActivity::class.java))
-//            }
-//        }
-//    }
 }
 
 
