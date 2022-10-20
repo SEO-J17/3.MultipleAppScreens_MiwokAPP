@@ -1,7 +1,6 @@
 package study.seo.a3multipleappscreens_miwokapp
 
 import android.os.Bundle
-import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import study.seo.a3multipleappscreens_miwokapp.data.DataSource
 import study.seo.a3multipleappscreens_miwokapp.databinding.ActivityInfoPageBinding
