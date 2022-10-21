@@ -15,9 +15,9 @@ class ListAdapter(
 
     override fun getCount(): Int = dataSet.size
 
-    override fun getItem(positon: Int): Any = dataSet[positon]
+    override fun getItem(positon: Int): NumberData = dataSet[positon]
 
-    override fun getItemId(positon: Int): Long = 0
+    override fun getItemId(positon: Int): Long = positon.toLong()
 
     override fun getView(
         positon: Int,
